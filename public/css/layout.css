@@ -1,0 +1,27 @@
+/* Common Classes */
+.flex_container {
+  display: flex;
+}
+
+.center_flex {
+  justify-content: center;
+  align-items: center;
+}
+
+.container_padding {
+  padding: 30px 120px;
+}
+
+/* Header */
+header {
+  justify-content: space-between;
+}
+
+/* Navbar in header */
+nav {
+  margin-right: 80px;
+}
+
+ul li {
+  margin: 0px 15px;
+}
