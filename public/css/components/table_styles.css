@@ -1,0 +1,40 @@
+.table_wrapper {
+  max-height: 96%;
+  overflow-y: auto;
+  display: block;
+  margin-top: 5px;
+}
+
+table {
+  width: 100%;
+  overflow-x: auto;
+  background-color: rgb(252, 252, 252);
+  border-collapse: collapse;
+}
+
+table th {
+  text-align: start;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: rgb(252, 252, 252);
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+td,
+th {
+  border-right: 1px solid #ccc;
+  padding-left: 10px;
+}
+
+td:last-child,
+th:last-child {
+  border-right: none;
+}
+
+table tr {
+  height: 50px;
+}

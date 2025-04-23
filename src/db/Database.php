@@ -1,7 +1,8 @@
 <?php
-class Databse
+
+class Database
 {
-    private string $host = "127.0.0.1";
+    private string $host = "db";
     private string $dbname = "books_db";
     private string $username = "user";
     private string $password = "password";

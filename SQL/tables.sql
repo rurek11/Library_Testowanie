@@ -15,7 +15,6 @@ CREATE TABLE books (
     author_id INT NOT NULL,
     year INT,
     genre VARCHAR(100),
-    isbn VARCHAR(20),
     FOREIGN KEY (author_id) REFERENCES authors(id)
         ON DELETE CASCADE
         ON UPDATE CASCADE

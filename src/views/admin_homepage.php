@@ -10,6 +10,22 @@
 
 <body>
     <?php include __DIR__ . '/partials/header.php'; ?>
+
+    <main class="flex_container center_flex container_padding">
+        <a href="/index.php?page=books" class="flex_container dashboard_image_div center_flex">
+            <img src="/images/books.png" alt="Books" class="dashboard_image">
+            <p>Books</p>
+        </a>
+
+        <div class="dashboard_image dashboard_image_separation_div"></div>
+
+        <a href="/index.php?page=authors" class="flex_container dashboard_image_div center_flex">
+            <img src="/images/authors.png" alt="Authors" class="dashboard_image">
+            <p>Authors</p>
+        </a>
+    </main>
+
+    <?php include __DIR__ . '/partials/footer.php'; ?>
 </body>
 
 </html>

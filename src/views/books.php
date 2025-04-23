@@ -10,7 +10,41 @@
 
 <body>
     <?php include __DIR__ . '/partials/header.php'; ?>
-    <h1>BOOKS</h1>
+
+
+    <main class="container_padding">
+        <h2>BOOKS</h2>
+        <div class="table_wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Year</th>
+                        <th>Genre</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php foreach ($books as $book): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($book['title']) ?></td>
+                            <td><?= htmlspecialchars($book['author_name'] . ' ' . $book['author_surname']) ?></td>
+                            <td><?= htmlspecialchars($book['year']) ?></td>
+                            <td><?= htmlspecialchars($book['genre']) ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+
+                <tfoot>
+                </tfoot>
+
+            </table>
+        </div>
+
+    </main>
+
+    <?php include __DIR__ . '/partials/footer.php'; ?>
 </body>
 
 </html>

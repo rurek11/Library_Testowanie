@@ -8,7 +8,7 @@
         include 'navbar.php';
         ?>
 
-        <p class="flex_container center_flex">ADMIN PAGE</p>
+        <p id="Admin_page_p" class="flex_container center_flex pointer">ADMIN PAGE</p>
     </div>
 </header>
 

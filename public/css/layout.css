@@ -1,4 +1,8 @@
 /* Common Classes */
+.logo_bar {
+  cursor: pointer;
+}
+
 .flex_container {
   display: flex;
 }
@@ -8,12 +12,45 @@
   align-items: center;
 }
 
+.spacebetween_flex {
+  justify-content: space-between;
+}
+
+.container_center {
+  text-align: center;
+}
+
 .container_padding {
   padding: 30px 120px;
 }
 
+.dashboard_image {
+  height: 160px;
+  width: 180px;
+  margin-bottom: 10px;
+}
+
+.dashboard_image_separation_div {
+  width: 600px;
+}
+
+.dashboard_image_div {
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.dashboard_image_div:hover {
+  transform: scale(1.05);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
 /* Header */
 header {
+  background-color: rgb(252, 252, 252);
   justify-content: space-between;
 }
 
@@ -22,6 +59,27 @@ nav {
   margin-right: 80px;
 }
 
+nav a {
+  display: block;
+  transition: transform 0.3s;
+}
+
+nav a:hover {
+  transform: scale(1.1);
+}
+
 ul li {
   margin: 0px 15px;
+}
+
+/* main */
+main {
+  height: 100%;
+}
+
+/* footer */
+footer {
+  height: 80px;
+  background-color: rgb(252, 252, 252);
+  align-items: center;
 }
