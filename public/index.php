@@ -1,33 +1,12 @@
 <?php
+require_once __DIR__ . '/../vendor/autoload.php';
 
-$allowedPages = ['admin_homepage', 'books', 'authors'];
+use App\Router;
 
-$page = $_GET['page'] ?? 'admin_homepage';
+$router = new Router();
 
-if (!in_array($page, $allowedPages)) {
-    echo "404 - Nie znaleziono strony";
-    exit;
-}
-
-switch ($page) {
-    case 'admin_homepage':
-        include dirname(__DIR__) . "/src/views/admin_homepage.php";
-        break;
-
-    case 'books':
-        require_once dirname(__DIR__) . "/src/controllers/BooksController.php";
-
-        $controller = new BooksController();
-        $controller->index();
-        break;
-
-    case 'authors':
-        // require_once dirname(__DIR__) . "/src/controllers/AuthorsController.php";
-        // $controller = new AuthorsController();
-        // $controller->index();
-        // break;
-
-    default:
-        echo "404 - Nie znaleziono strony";
-        break;
+if (str_starts_with($_SERVER['REQUEST_URI'], '/api/')) {
+    $router->handleApiRequest($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
+} else {
+    $router->handleRequest($_GET);
 }

@@ -5,6 +5,24 @@
   margin-top: 5px;
 }
 
+.table_header {
+  margin-right: 30px;
+}
+
+.margin_right_table_bar_mode {
+  margin-right: 8px;
+}
+
+.margin_right_table_bar {
+  margin-right: 15px;
+}
+
+.table_header_button {
+  background-color: transparent;
+  border-style: none;
+  cursor: pointer;
+}
+
 table {
   width: 100%;
   overflow-x: auto;

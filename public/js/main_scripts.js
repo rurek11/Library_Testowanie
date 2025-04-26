@@ -5,5 +5,5 @@ logo.addEventListener("click", go_homepage);
 admin_button.addEventListener("click", go_homepage);
 
 function go_homepage() {
-  location.href = "/index.php?page=admin_homepage";
+  location.href = "/index.php?page=adminHomepage";
 }

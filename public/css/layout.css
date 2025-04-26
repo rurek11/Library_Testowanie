@@ -3,6 +3,18 @@
   cursor: pointer;
 }
 
+.visible {
+  display: inline;
+}
+
+.invisible {
+  display: none;
+}
+
+.display_inline {
+  display: inline;
+}
+
 .flex_container {
   display: flex;
 }

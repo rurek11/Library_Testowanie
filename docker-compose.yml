@@ -1,15 +1,18 @@
+# docker-compose.yml
 version: '3.8'
 
 services:
   php:
-    build: 
+    build:
       context: .
-      dockerfile: Docker/Dockerfile
+      dockerfile: docker/Dockerfile
     ports:
       - "8000:80"
     volumes:
-      - ./public:/var/www/html
-      - ./:/var/www
+      - ./src:/var/www/src
+      - ./public:/var/www/public
+      - ./composer.json:/var/www/composer.json
+      - ./composer.lock:/var/www/composer.lock
     depends_on:
       - db
 

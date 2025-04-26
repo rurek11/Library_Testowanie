@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    AddType application/javascript .js
+    # Jeśli istnieje plik lub katalog, NIE przepisuj
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # W przeciwnym wypadku przepisz wszystko do index.php
+    RewriteRule ^ index.php [QSA,L]
+
+</IfModule>

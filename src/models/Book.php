@@ -1,5 +1,8 @@
 <?php
-require_once __DIR__ . '/../db/Database.php';
+
+namespace App\Models;
+
+use App\Db\Database;
 
 class Book
 {
@@ -23,6 +26,6 @@ class Book
         $stmt = $conn->prepare($query);
         $stmt->execute();
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 }

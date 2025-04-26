@@ -1,0 +1,17 @@
+{
+    "name": "franek/library-manager",
+    "description": "A simple library management system with REST API",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "franek"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
