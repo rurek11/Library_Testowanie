@@ -41,19 +41,31 @@ class Router
 
         if ($segments[0] !== 'api') {
             http_response_code(404);
-            echo json_encode(['error' => 'probably bad Api name']);
+            echo json_encode(['error' => 'Invalid API path']);
             return;
         }
 
         $resource = $segments[1] ?? null;
-        $id = $segments[2] ?? null;
+        $action = $segments[2] ?? null;
 
-        if ($method == 'GET') {
-            if ($resource == 'books') {
-                if ($id === null) {
-                    require_once __DIR__ . '/Api/books/get.php';
-                }
-            }
+        $apiBasePath = __DIR__ . '/Api/';
+
+        // Domyślne zachowanie jeśli brak akcji - GET books
+        if ($method === 'GET' && $resource === 'books' && $action === null) {
+            $filePath = $apiBasePath . 'books/get.php';
+        } else if ($action !== null) {
+            $filePath = $apiBasePath . "$resource/$action";
+        } else {
+            http_response_code(404);
+            echo json_encode(['error' => 'API endpoint not complete']);
+            return;
+        }
+
+        if (file_exists($filePath)) {
+            require_once $filePath;
+        } else {
+            http_response_code(404);
+            echo json_encode(['error' => 'API file not found']);
         }
     }
 }

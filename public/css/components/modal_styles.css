@@ -1,0 +1,94 @@
+/* Usuwa strzałki w input type="number" w Chrome, Safari, Edge */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Usuwa strzałki w Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.add_book_modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1100;
+  display: block;
+  width: 400px;
+}
+
+.readonly_input {
+  background-color: #f0f0f0;
+  color: #999;
+  pointer-events: none;
+}
+
+.modal_form {
+  flex-direction: column;
+}
+
+.modal_buttons_div {
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+.modal_button {
+  width: 100%;
+  height: 40px;
+  border-style: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 20px;
+  margin: 6px 0px;
+}
+
+.buttonSubmit {
+  background-color: rgb(88, 150, 26);
+  transition: background-color 0.3 ease;
+}
+
+.buttonSubmit:hover {
+  background-color: rgb(61, 193, 81);
+}
+
+.buttonAbandon {
+  background-color: rgb(83, 83, 83);
+}
+
+.buttonAbandon:hover {
+  background-color: rgb(160, 160, 160);
+}
+
+.buttonDelete {
+  background-color: rgb(194, 56, 56);
+}
+
+.buttonDelete:hover {
+  background-color: rgb(232, 68, 68);
+}
+
+.modal_form select {
+  appearance: none; /* Usuwa systemowy wygląd */
+  -webkit-appearance: none; /* Usuwa w Safari/Chrome */
+  -moz-appearance: none; /* Usuwa w Firefox */
+}
+
+.modal_form input,
+.modal_form select {
+  border-style: none;
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  box-sizing: border-box;
+}

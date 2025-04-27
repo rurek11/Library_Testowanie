@@ -51,8 +51,7 @@ WORKDIR /var/www
 
 # Najpierw tylko pliki zależności → cache dla kolejnych buildów
 COPY composer.json composer.lock* ./
-RUN composer install --no-dev --prefer-dist --no-interaction --no-progress
-
+RUN composer install --prefer-dist --no-interaction --no-progress
 ###############################################################################
 # 5. Dopiero teraz cały kod źródłowy                                           #
 ###############################################################################

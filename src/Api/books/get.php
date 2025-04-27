@@ -3,7 +3,6 @@
 namespace App\Api;
 
 use App\Models\Book;
-// require_once dirname(__dir__, 2) . '/models/Book.php';
 
 header('Content-Type: application/json');
 

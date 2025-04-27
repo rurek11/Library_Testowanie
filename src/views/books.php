@@ -11,15 +11,18 @@
 <body>
     <?php include __DIR__ . '/partials/header.php'; ?>
 
-    <div id="modal_add_book" class="invisible"></div>
+    <div id="modal_overlay" class="invisible"></div>
+
+    <?php include __DIR__ . '/partials/modals/booksAddModal.php'; ?>
+    <?php include __DIR__ . '/partials/modals/booksEditModal.php'; ?>
 
     <main class="container_padding">
         <div id="books_table_header_bar">
             <h2 class="display_inline table_header">BOOKS</h2>
-            <span id="table_mode_name" class="margin_right_table_bar_mode">VIEW MODE</span>
+            <!-- <span id="table_mode_name" class="margin_right_table_bar_mode">VIEW MODE</span> -->
             <button id="table_button_add" class="margin_right_table_bar table_header_button">Add Book</button>
-            <button id="table_button_edit" class="margin_right_table_bar table_header_button">Edit</button>
-            <button id="table_button_stop" class="margin_right_table_bar table_header_button invisible">Stop</button>
+            <!-- <button id="table_button_edit" class="margin_right_table_bar table_header_button">Edit</button>
+            <button id="table_button_stop" class="margin_right_table_bar table_header_button invisible">Stop</button> -->
         </div>
         <div class="table_wrapper">
             <table id="books_table">
@@ -61,7 +64,7 @@
 
     <?php include __DIR__ . '/partials/footer.php'; ?>
 
-    <script type="module" src="/js/books/main.js"></script>
+    <script type="module" src="/js/viewsScripts/books/main.js"></script>
 </body>
 
 </html>

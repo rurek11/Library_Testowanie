@@ -9,10 +9,7 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - ./src:/var/www/src
-      - ./public:/var/www/public
-      - ./composer.json:/var/www/composer.json
-      - ./composer.lock:/var/www/composer.lock
+      - .:/var/www
     depends_on:
       - db
 
