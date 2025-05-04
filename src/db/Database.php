@@ -21,7 +21,7 @@ class Database
 
             $this->con->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         } catch (\PDOException $e) {
-            die("Błąd połączenia z bazą danych: " . $e->getMessage());
+            throw new \RuntimeException("Błąd połączenia z bazą danych: " . $e->getMessage());
         }
     }
 

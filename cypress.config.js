@@ -1,9 +1,12 @@
-const { defineConfig } = require("cypress");
+import { defineConfig } from "cypress";
 
-module.exports = defineConfig({
+export default defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
+    // to musi wskazywać Twój serwer z Docker-a
+    baseUrl: "http://localhost:8000",
+    specPattern: "cypress/e2e/**/*.cy.js",
+    supportFile: "cypress/support/e2e.js",
+    // jeżeli masz niestandardowe time-outy:
+    // defaultCommandTimeout: 8000,
   },
 });

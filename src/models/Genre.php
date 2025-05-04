@@ -18,6 +18,11 @@ class Genre
 
         $stmt = $conn->prepare($query);
         $stmt->execute();
+        // return [
+        //     ['id' => 1, 'name' => 'Fantasy'],
+        //     ['id' => 2, 'name' => 'Science Fiction'],
+        //     ['id' => 3, 'name' => 'Horror'],
+        // ];
 
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }

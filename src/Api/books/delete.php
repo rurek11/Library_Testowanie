@@ -2,28 +2,31 @@
 
 namespace App\Api;
 
-use App\Models\Book;
+use App\Services\BookService;
+use App\Validators\BookValidator;
 
 header('Content-Type: application/json');
 
 try {
     $data = json_decode(file_get_contents("php://input"), true);
+    if (!$data) throw new \Exception("No data provided");
 
-    if (!$data || !isset($data['id']) || !is_numeric($data['id']) || (int)$data['id'] <= 0) {
+    $errors = BookValidator::validateDelete($data);
+    if (!empty($errors)) {
         http_response_code(400);
-        echo json_encode(["error" => "Invalid book id"]);
+        echo json_encode(["error" => "Invalid input data", "details" => $errors]);
         return;
     }
 
     $id = (int)$data['id'];
-
-    $result = Book::delete($id);
+    $service = new BookService();
+    $result = $service->deleteBook($id);
 
     if ($result) {
         http_response_code(200);
         echo json_encode(["message" => "Book deleted successfully"]);
     } else {
-        http_response_code(400); // <<< Zmieniamy na 400, jeśli ID nie istnieje
+        http_response_code(400);
         echo json_encode(["error" => "Book not found or already deleted"]);
     }
 } catch (\Throwable $th) {
