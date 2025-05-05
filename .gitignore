@@ -1,1 +1,21 @@
-# /vendor/
+# Ignoruj katalogi i pliki systemowe
+.DS_Store
+
+# Composer
+/vendor/
+
+# Node.js
+# /node_modules/
+
+# Logi
+*.log
+
+# PHPUnit
+# .phpunit.result.cache
+
+# Raporty testów wydajności
+reports/*.json
+
+# IDE (np. PHPStorm, VSCode)
+# .idea/
+# .vscode/
